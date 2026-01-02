@@ -62,7 +62,8 @@ async function loadLeads(filterProject = null, filterStatus = null) {
         });
 
     } catch (err) {
-        tbody.innerHTML = '<tr><td colspan="6" style="text-align: center; color: var(--danger);">Failed to load leads.</td></tr>';
+        tbody.innerHTML = `<tr><td colspan="6" style="text-align: center; color: var(--danger);">Error: ${err.message}. Try <a href="/api/debug" target="_blank">Debug</a></td></tr>`;
+        console.error(err);
     }
 }
 

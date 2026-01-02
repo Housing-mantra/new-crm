@@ -45,6 +45,23 @@ connectDB();
 app.use('/api/leads', leadRoutes);
 app.use('/api/projects', projectRoutes);
 
+// Debug Route
+app.get('/api/debug', (req, res) => {
+  const fs = require('fs');
+  const path = require('path');
+  const dbPath = path.join(__dirname, 'data/leads.json');
+  const utilsDbPath = path.join(__dirname, 'utils/db.js');
+
+  res.json({
+    cwd: process.cwd(),
+    dirname: __dirname,
+    dataPath: dbPath,
+    dataExists: fs.existsSync(dbPath),
+    dataDirExists: fs.existsSync(path.join(__dirname, 'data')),
+    utilsExists: fs.existsSync(utilsDbPath)
+  });
+});
+
 // Fallback for SPA
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
