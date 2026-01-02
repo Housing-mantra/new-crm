@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SARYU | Real Estate CRM</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Ionicons for Icons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="brand">SARYU<span style="font-weight: 300; font-size: 0.8em; color: var(--text-muted);">.crm</span>
+        </div>
+        <nav>
+            <div class="nav-item active">
+                <ion-icon name="grid-outline"></ion-icon> Dashboard
+            </div>
+            <div class="nav-item">
+                <ion-icon name="people-outline"></ion-icon> Leads
+            </div>
+            <a href="projects.html" class="nav-item">
+                <ion-icon name="business-outline"></ion-icon> Projects
+            </a>
+            <div class="nav-item">
+                <ion-icon name="bar-chart-outline"></ion-icon> Analytics
+            </div>
+            <div class="nav-item" style="margin-top: auto;">
+                <ion-icon name="settings-outline"></ion-icon> Settings
+            </div>
+        </nav>
+
+        <!-- Helpful Link for Demo -->
+        <div style="margin-top: 20px; padding: 15px; background: rgba(255,255,255,0.05); border-radius: 12px;">
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 10px;">Test Integration</p>
+            <a href="landing-simulation.html" target="_blank"
+                style="color: var(--primary); font-size: 0.9rem; text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                Open Landing Page <ion-icon name="open-outline"></ion-icon>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="header">
+            <div class="title">
+                <h1>Leads Overview</h1>
+                <p style="color: var(--text-muted);">Manage and track your potential clients here.</p>
+            </div>
+            <div class="user-profile">
+                <!-- Avatar placeholder -->
+                <div style="width: 40px; height: 40px; background: var(--gradient); border-radius: 50%;"></div>
+            </div>
+        </header>
+
+        <!-- Stats -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>Total Leads</h3>
+                <div class="value" id="total-leads">0</div>
+            </div>
+            <div class="stat-card">
+                <h3>New Inquiries</h3>
+                <div class="value" id="new-leads">0</div>
+            </div>
+            <div class="stat-card">
+                <h3>Converted</h3>
+                <div class="value" id="converted-leads">0</div>
+            </div>
+        </div>
+
+        <!-- Filters & Actions -->
+        <div class="filters">
+            <button class="filter-btn active" onclick="loadLeads()">All Projects</button>
+            <button class="filter-btn" onclick="loadLeads(null, 'New')">New Only</button>
+            <!-- Add more dynamically or static for demo -->
+        </div>
+
+        <!-- Leads Table -->
+        <div class="leads-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Lead Name</th>
+                        <th>Project Interest</th>
+                        <th>Contact</th>
+                        <th>Source</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="leads-table-body">
+                    <!-- Leads will be injected here -->
+                    <tr>
+                        <td colspan="6" style="text-align: center; padding: 40px; color: var(--text-muted);">Loading
+                            leads...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>

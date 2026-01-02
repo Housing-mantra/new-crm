@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Apartments - Green Valley | Inquiry</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Override body for landing page specific look */
+        body {
+            background: #f8fafc;
+            color: #1e293b;
+            display: block;
+        }
+    </style>
+</head>
+
+<body class="landing-body">
+
+    <div class="landing-hero">
+        <h1 style="font-size: 3rem; margin-bottom: 20px;">Green Valley Estates</h1>
+        <p style="font-size: 1.2rem; opacity: 0.9;">Register your interest today for premium 3BHK apartments.</p>
+    </div>
+
+    <div class="form-card">
+        <h2 style="margin-bottom: 20px; color: #1e293b;">Request a Site Visit</h2>
+
+        <div id="alert-box" class="alert"></div>
+
+        <form id="lead-form">
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" name="name" class="form-control" placeholder="John Doe" required>
+            </div>
+
+            <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" name="phone" class="form-control" placeholder="+91 98765 43210" required>
+            </div>
+
+            <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" name="email" class="form-control" placeholder="john@example.com">
+            </div>
+
+            <!-- New Logic: Using projectId instead of raw project name. 
+                 Change value="" to a real project ID from your CRM -->
+            <input type="hidden" name="projectId" value="REPLACE_WITH_ID_FROM_CRM">
+
+            <input type="hidden" name="source" value="Facebook Campaign #12">
+
+            <button type="submit" class="btn-primary">Submit Inquiry</button>
+            <p style="margin-top: 15px; font-size: 0.8rem; color: #64748b; text-align: center;">
+                Your data is secure. By submitting, you agree to receive updates.
+            </p>
+        </form>
+    </div>
+
+    <script src="js/landing.js"></script>
+</body>
+
+</html>
