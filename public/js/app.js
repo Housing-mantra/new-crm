@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:3000/api/leads';
+const API_URL = '/api/leads';
 
 document.addEventListener('DOMContentLoaded', () => {
     loadStats();
